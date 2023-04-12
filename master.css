@@ -1,0 +1,376 @@
+:root {
+  --page-padding: 100px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "head head head head head head head head head head head head head head"
+    "home home home home home home home home home home home home home home"
+    "quran quran quran quran quran quran quran quran quran quran quran quran quran quran"
+    "listen listen listen listen listen listen listen listen listen listen listen listen listen listen"
+    " blog blog blog blog blog blog blog blog blog blog blog blog blog blog"
+    " footer footer footer footer footer footer footer footer footer footer footer footer footer footer"
+}
+
+.head {
+  grid-area: head;
+  font-size: 1.5rem;
+  padding: 0 40px !important;
+  font-weight: 500;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+.center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  width: 50%;
+
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #00000052;
+  padding: 10px;
+  transition: .8s;
+  border: solid 2px transparent;
+}
+
+.navbar ul li {
+  margin: 10px;
+  padding: 10px;
+
+}
+
+.navbar ul li:hover a {
+  color: #20A36C;
+  border-bottom: 2px solid #20A36C;
+}
+
+.btn {
+  width: 141px;
+  height: 56px;
+  background-color: #FFF;
+  color: #20A36C;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 1.5rem;
+  transition: .7s;
+  border: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+  /* background-color: #059b5d;
+  color: #fff; */
+}
+
+.container>* {
+  padding: var(--page-padding) 40px;
+}
+
+.home-page {
+  grid-area: home;
+  background-color: #F5F9FC;
+  height: calc(100vh - 150px);
+  background-image: url(/images/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -35vh;
+}
+
+.home-page .left-side {
+  width: 60%
+}
+
+.home-page .left-side>* {
+  margin: 20px
+}
+
+.home-page .right-side {
+  width: 40%
+}
+
+.right-side img {
+  width: 750px;
+  height: 750px;
+}
+
+h1 {
+  text-transform: capitalize;
+  color: #37374D;
+  font-size: 5rem;
+}
+
+h1:hover {
+  cursor: default
+}
+
+p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 170%;
+  text-align: justify;
+  letter-spacing: 0.155em;
+  text-transform: capitalize;
+  color: #4D4B4B;
+  width: 70%;
+}
+
+.home-page .btn,
+.quran-page .btn,
+.listen-page .btn,
+.blogs-page .btn {
+  box-shadow: none;
+  border-radius: 10px;
+  width: 307px;
+  height: 88px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+}
+
+.home-page .btn-audio {
+  color: #37374D;
+  border: solid 3px #7E7E7E;
+}
+
+
+.home-page .btn-quran {
+  color: #FFF;
+  background: linear-gradient(90deg, #20A36C 8.64%, #52E6A7 95.76%)
+}
+
+.quran-page {
+  grid-area: quran;
+  height: 100vh;
+  gap: 40px;
+}
+
+.quran-page .image-side {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quran-page .image-side img {
+  background-color: #20A36C;
+  border-radius: 50%;
+  width: 600px;
+  height: 600px;
+}
+
+
+.quran-page .txt-side {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 65px;
+}
+
+
+.quran-page .btn,
+.listen-page .btn,
+.blogs-page .btn {
+  border: solid 3px #20A36C;
+  color: #37374D
+}
+
+.listen-page {
+  grid-area: listen;
+  flex-direction: column;
+  justify-content: center;
+  gap: 50px;
+}
+
+.listen-page h1,
+.blogs-page h1 {
+  width: 90%;
+  text-align: center
+}
+
+.listen-page #search-bar {
+  width: 660px;
+  height: 75px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 3px solid #20A36C;
+  outline: none;
+  border-radius: 25px;
+  position: relative;
+}
+
+#search-bar::placeholder {
+  color: #37374D;
+  font-size: 1.5rem;
+  font-weight: 700
+}
+
+
+
+/* search-icon::before {
+  content: "hello";
+  width: 10px;
+  height: 10px;
+  border-radius: 50px;
+  background-color: #52E6A7;
+  position: absolute;
+  top: 0;
+  left: 0;
+} */
+
+.listen-page #search-icon {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.listen-page .result {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(550px, 1fr));
+  grid-template-rows: repeat(3, minmax(150px, 1fr));
+  gap: 60px;
+}
+
+.listen-page .result>.ayah {
+  border: 3px solid #7E7E7E7E;
+  padding: 20px;
+  border-radius: 20px;
+  font-size: 2rem;
+  color: #37374D
+}
+
+.ayah h4 {
+  color: #4D4B4B;
+  font-size: 1.5rem;
+}
+
+.blogs-page {
+  grid-area: blog;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.blogs-page .blog-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-content: center;
+  width: 90vw;
+  margin: 20px 10vw;
+}
+
+.blogs-page .blog-container .blog {
+  font-size: 32px;
+  line-height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.blog a {
+  text-decoration: none;
+  color: #20A36C;
+  /* align-self: flex-start; */
+  text-align: center;
+  position: relative;
+  right: 50px
+}
+
+.blog-container .blog>img {
+  width: 524px;
+  height: 434px;
+  transition: .8s ease-in-out;
+
+}
+
+.blog-container .blog>p {
+  text-align: left
+}
+
+.blog img:hover {
+  border-radius: 100px 40px 200px 60px
+}
+
+.contact-us {
+  grid-area: footer;
+  background-color: #37374d;
+  color: #FFF;
+}
+
+.contact-us p {
+  color: #fff;
+  width: 50vw;
+}
+
+.form-section {
+  background-color: #FFF;
+  border-radius: 20px
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 40vw;
+  background-color: #FFF;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.form-section form>input {
+  background-color: #37374D;
+  border-radius: 25px;
+  height: 40px;
+  border: none;
+  outline: none;
+  color: #FFF;
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+.form-section form>input::selection {
+  background-color: #20A36C;
+}
+
+.form-section form>input::placeholder {
+  color: #FFF
+}
+
+.btn-submit {
+  background-color: #52E6A7;
+  font-size: 1.4rem;
+  text-align: center;
+  ;
+}
